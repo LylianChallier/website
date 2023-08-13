@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+main {
+  min-height: 500px;
+}
+
 body {
   font-family: 'Manrope', sans-serif;
   font-size: 1em;
@@ -19,15 +23,18 @@ a {
 }
 
 em {
-  /*color: #a5b4fc;*/
+  /*color: #a5b4fc;
+  color: #1ebdc6;*/
   color: #1ebdc6;
   font-style: normal;
+  font-weight: bold;
 }
 
 h1 {
   font-size: 3.5em;
-  /*color: #a5b4fc;*/
-  color: #1ebdc6;
+  /*color: #a5b4fc;
+  color: #1ebdc6;*/
+  color: #f9f8ff;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -117,6 +124,10 @@ nav a {
   header,
   footer {
     padding: 20px 20px;
+  }
+
+  main {
+    min-height: 300px;
   }
 
   h1 {
