@@ -1,4 +1,5 @@
 .accueil-photos {
+    display : none;
     background-color: white;
     padding: 80px;
   }
