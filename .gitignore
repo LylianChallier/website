@@ -23,3 +23,9 @@ yarn-error.log*
 
 # OS
 .DS_Store
+
+# VSCode - Fichiers personnels uniquement (garder .vscode/settings.json et extensions.json)
+.vscode/.ropeproject/
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/*.code-workspace
