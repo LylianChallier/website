@@ -44,6 +44,18 @@ def get_portfolio_data(request):
                     "badge": "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
                 },
                 {
+                    "name": "Django",
+                    "badge": "https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green",
+                },
+                {
+                    "name": "Docker",
+                    "badge": "https://img.shields.io/badge/docker-257bd6?style=for-the-badge&logo=docker&logoColor=white",
+                },
+                {
+                    "name": "FastAPI",
+                    "badge": "https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi",
+                },
+                {
                     "name": "Git",
                     "badge": "https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white",
                 },
@@ -74,6 +86,10 @@ def get_portfolio_data(request):
                 {
                     "name": "R",
                     "badge": "https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white",
+                },
+                {
+                    "name": "React",
+                    "badge": "https://camo.githubusercontent.com/3467eb8e0dc6bdaa8fa6e979185d371ab39c105ec7bd6a01048806b74378d24c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d3230323332413f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d363144414642",
                 },
                 {
                     "name": "Scikit-learn",
@@ -121,6 +137,18 @@ def get_portfolio_data(request):
                     "badge": "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
                 },
                 {
+                    "name": "Django",
+                    "badge": "https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green",
+                },
+                {
+                    "name": "Docker",
+                    "badge": "https://img.shields.io/badge/docker-257bd6?style=for-the-badge&logo=docker&logoColor=white",
+                },
+                {
+                    "name": "FastAPI",
+                    "badge": "https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi",
+                },
+                {
                     "name": "Git",
                     "badge": "https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white",
                 },
@@ -151,6 +179,10 @@ def get_portfolio_data(request):
                 {
                     "name": "R",
                     "badge": "https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white",
+                },
+                {
+                    "name": "React",
+                    "badge": "https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge",
                 },
                 {
                     "name": "Scikit-learn",
