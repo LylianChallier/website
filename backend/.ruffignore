@@ -1,0 +1,16 @@
+# Fichiers et dossiers à ignorer par Ruff
+__pycache__/
+*.pyc
+.git/
+.venv/
+venv/
+env/
+staticfiles/
+media/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Migrations Django
+**/migrations/*

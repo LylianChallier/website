@@ -1,0 +1,57 @@
+[project]
+name = "portfolio-backend"
+version = "0.1.0"
+description = "Backend Django pour le portfolio"
+requires-python = ">=3.11"
+
+[tool.ruff]
+# Configuration Ruff alternative via pyproject.toml
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes
+    "I",     # isort
+    "N",     # pep8-naming
+    "UP",    # pyupgrade
+    "B",     # flake8-bugbear
+    "C4",    # flake8-comprehensions
+    "DJ",    # flake8-django
+    "SIM",   # flake8-simplify
+]
+
+ignore = [
+    "E501",  # line too long
+    "DJ001", # Avoid using null=True on string-based fields
+]
+
+exclude = [
+    ".git",
+    "__pycache__",
+    "*/migrations/*",
+    "venv",
+    "env",
+    ".venv",
+    "staticfiles",
+    "media",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"settings.py" = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["mysite", "core"]
+section-order = ["future", "standard-library", "django", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.lint.isort.sections]
+"django" = ["django"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

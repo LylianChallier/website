@@ -1,0 +1,32 @@
+{
+  "python.languageServer": "Pylance",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+    "reportMissingModuleSource": "none"
+  },
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/backend"
+  ],
+
+  // Configuration Ruff
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": null,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll": "explicit"
+    }
+  },
+
+  // Ruff settings
+  "ruff.enable": true,
+  "ruff.organizeImports": true,
+  "ruff.fixAll": true,
+  "ruff.configurationPreference": "filesystemFirst",
+  "ruff.lint.args": [
+    "--config=${workspaceFolder}/backend/ruff.toml"
+  ],
+  "ruff.format.args": [
+    "--config=${workspaceFolder}/backend/ruff.toml"
+  ]
+}

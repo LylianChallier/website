@@ -1,0 +1,62 @@
+# Configuration Ruff pour le projet Django
+# https://docs.astral.sh/ruff/configuration/
+
+# Longueur maximale de ligne
+line-length = 88
+
+# Version Python cible
+target-version = "py311"
+
+[lint]
+# Règles à activer
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes
+    "I",     # isort
+    "N",     # pep8-naming
+    "UP",    # pyupgrade
+    "B",     # flake8-bugbear
+    "C4",    # flake8-comprehensions
+    "DJ",    # flake8-django
+    "SIM",   # flake8-simplify
+]
+
+# Règles à ignorer
+ignore = [
+    "E501",  # line too long (géré par le formateur)
+    "DJ001", # Avoid using null=True on string-based fields
+]
+
+# Fichiers et dossiers à exclure
+exclude = [
+    ".git",
+    "__pycache__",
+    "*/migrations/*",
+    "venv",
+    "env",
+    ".venv",
+    "staticfiles",
+    "media",
+]
+
+[lint.per-file-ignores]
+# Ignorer les imports non utilisés dans __init__.py
+"__init__.py" = ["F401"]
+# Ignorer certaines règles dans les fichiers de configuration
+"settings.py" = ["E501"]
+
+[lint.isort]
+# Configuration isort (tri des imports)
+known-first-party = ["mysite", "core"]
+section-order = ["future", "standard-library", "django", "third-party", "first-party", "local-folder"]
+
+[lint.isort.sections]
+"django" = ["django"]
+
+[format]
+# Configuration du formateur
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
