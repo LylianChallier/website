@@ -68,8 +68,19 @@ nav {
   margin-left: 2rem;
 }
 
-.lang-switcher a {
+.lang-switcher button {
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.lang-switcher button:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .lang-switcher img {

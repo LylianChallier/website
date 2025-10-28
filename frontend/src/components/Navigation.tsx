@@ -18,20 +18,22 @@ const Navigation: React.FC<NavigationProps> = ({ onLanguageChange, currentLang }
         <a href="https://github.com/lylianchallier" target="_blank" rel="noopener noreferrer">{t('github')}</a>
       </div>
       <div className="lang-switcher">
-        <a
+        <button
           onClick={() => onLanguageChange('fr')}
           title="Français"
           className={currentLang === 'fr' ? 'active' : ''}
+          aria-label="Changer la langue en français"
         >
           <img src="https://flagcdn.com/fr.svg" alt="Français" width="24" />
-        </a>
-        <a
+        </button>
+        <button
           onClick={() => onLanguageChange('en')}
           title="English"
           className={currentLang === 'en' ? 'active' : ''}
+          aria-label="Change language to English"
         >
           <img src="https://flagcdn.com/gb.svg" alt="English" width="24" />
-        </a>
+        </button>
       </div>
     </nav>
   );
