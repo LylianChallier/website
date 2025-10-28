@@ -11,7 +11,9 @@ import Footer from './components/Footer';
 
 function App() {
   const { i18n } = useTranslation();
-  const [portfolioData, setPortfolioData] = useState<PortfolioData | null>(null);
+  const [portfolioData, setPortfolioData] = useState<PortfolioData | null>(
+    null
+  );
   const [loading, setLoading] = useState(true);
   const [currentLang, setCurrentLang] = useState('fr');
 
@@ -47,7 +49,10 @@ function App() {
   return (
     <div className="App">
       <Header name={portfolioData.name} title={portfolioData.title} />
-      <Navigation onLanguageChange={handleLanguageChange} currentLang={currentLang} />
+      <Navigation
+        onLanguageChange={handleLanguageChange}
+        currentLang={currentLang}
+      />
       <Main data={portfolioData} />
       <Footer name={portfolioData.name} />
     </div>

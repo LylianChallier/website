@@ -14,7 +14,7 @@ const resources = {
       languagesTools: '🛠️ Langages & Outils',
       email: 'Email',
       copyright: 'Tous droits réservés.',
-    }
+    },
   },
   en: {
     translation: {
@@ -28,19 +28,17 @@ const resources = {
       languagesTools: '🛠️ Languages & Tools',
       email: 'Email',
       copyright: 'All rights reserved.',
-    }
-  }
+    },
+  },
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'fr',
-    fallbackLng: 'fr',
-    interpolation: {
-      escapeValue: false
-    }
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: 'fr',
+  fallbackLng: 'fr',
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;

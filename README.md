@@ -71,6 +71,7 @@ Le frontend sera accessible sur `http://localhost:3000`
 - **Animations** : Animations au scroll et au chargement préservées
 - **Responsive** : Design adaptatif conservé
 - **TypeScript** : Frontend typé pour plus de sécurité
+- **Qualité du code** : Ruff (Python) + ESLint/Prettier (TypeScript)
 
 ## API Endpoints
 
@@ -96,3 +97,23 @@ Pour le déploiement en production :
 Les styles CSS originaux ont été préservés et les animations JavaScript ont été converties en animations React natives.
 
 Le changement de langue met à jour dynamiquement le contenu via l'API Django.
+
+### Linting & Formatage
+
+#### Backend (Python avec Ruff)
+```bash
+cd backend
+make lint      # Vérifier le code
+make format    # Formater le code
+make fix       # Corriger automatiquement
+```
+
+#### Frontend (TypeScript avec ESLint/Prettier)
+```bash
+cd frontend
+make lint      # Vérifier avec ESLint
+make format    # Formater avec Prettier
+make fix       # Corriger et formater
+```
+
+Voir [DEVELOPMENT.md](./DEVELOPMENT.md) pour plus de détails.

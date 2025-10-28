@@ -6,16 +6,27 @@ interface NavigationProps {
   currentLang: string;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ onLanguageChange, currentLang }) => {
+const Navigation: React.FC<NavigationProps> = ({
+  onLanguageChange,
+  currentLang,
+}) => {
   const { t } = useTranslation();
 
   return (
     <nav>
       <div className="nav-left">
         <a href="/">{t('home')}</a>
-        <a href="/media/CV.pdf" target="_blank" rel="noopener noreferrer">{t('cv')}</a>
+        <a href="/media/CV.pdf" target="_blank" rel="noopener noreferrer">
+          {t('cv')}
+        </a>
         <a href="/projects">{t('projects')}</a>
-        <a href="https://github.com/lylianchallier" target="_blank" rel="noopener noreferrer">{t('github')}</a>
+        <a
+          href="https://github.com/lylianchallier"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t('github')}
+        </a>
       </div>
       <div className="lang-switcher">
         <button
