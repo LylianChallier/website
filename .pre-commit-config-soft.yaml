@@ -1,0 +1,69 @@
+# Pre-commit hooks configuration
+# See https://pre-commit.com for more information
+# Mode: Non-bloquant (warnings uniquement, commit toujours autorisé)
+
+repos:
+  # Backend Python - Ruff (auto-fix)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      # Linter
+      - id: ruff
+        name: ruff lint (backend)
+        files: ^backend/
+        args: [--fix, --config=backend/ruff.toml]
+        verbose: true
+      # Formatter
+      - id: ruff-format
+        name: ruff format (backend)
+        files: ^backend/
+        args: [--config=backend/ruff.toml]
+        verbose: true
+
+  # Frontend TypeScript/React - ESLint & Prettier (auto-fix)
+  - repo: local
+    hooks:
+      - id: eslint
+        name: ESLint (frontend)
+        entry: bash -c 'cd frontend && npm run lint:fix || true'
+        language: system
+        files: ^frontend/src/.*\.(ts|tsx)$
+        pass_filenames: false
+        verbose: true
+
+      - id: prettier
+        name: Prettier (frontend)
+        entry: bash -c 'cd frontend && npm run format || true'
+        language: system
+        files: ^frontend/src/.*\.(ts|tsx|css|json)$
+        pass_filenames: false
+        verbose: true
+
+  # General hooks (non-bloquants)
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        name: Remove trailing whitespace
+        verbose: true
+      - id: end-of-file-fixer
+        name: Fix end of files
+        verbose: true
+      - id: check-yaml
+        name: Check YAML files
+        verbose: true
+      - id: check-json
+        name: Check JSON files
+        exclude: ^\.vscode/
+        verbose: true
+      - id: check-added-large-files
+        name: Check for large files
+        args: ['--maxkb=1000']
+        verbose: true
+      - id: check-merge-conflict
+        name: Check for merge conflicts
+        verbose: true
+      - id: mixed-line-ending
+        name: Fix mixed line endings
+        args: ['--fix=lf']
+        verbose: true

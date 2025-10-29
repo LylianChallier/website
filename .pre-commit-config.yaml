@@ -1,0 +1,33 @@
+# Pre-commit hooks configuration (MODE MINIMAL)
+# Seulement formatage auto, pas de checks bloquants
+# Pour activer: mv .pre-commit-config.yaml .pre-commit-config-soft.yaml && mv .pre-commit-config-minimal.yaml .pre-commit-config.yaml
+
+repos:
+  # Backend Python - Ruff (formatage seulement)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff-format
+        name: ruff format (backend)
+        files: ^backend/
+        args: [--config=backend/ruff.toml]
+
+  # Frontend - Prettier (formatage seulement)
+  - repo: local
+    hooks:
+      - id: prettier
+        name: Prettier (frontend)
+        entry: bash -c 'cd frontend && npm run format || true'
+        language: system
+        files: ^frontend/src/.*\.(ts|tsx|css|json)$
+        pass_filenames: false
+
+  # Hooks critiques uniquement
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-merge-conflict
+        name: Check for merge conflicts
+      - id: check-added-large-files
+        name: Check for large files
+        args: ['--maxkb=1000']

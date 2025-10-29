@@ -100,20 +100,56 @@ Le changement de langue met à jour dynamiquement le contenu via l'API Django.
 
 ### Linting & Formatage
 
-#### Backend (Python avec Ruff)
+Le projet utilise **pre-commit hooks** pour formater automatiquement le code avant chaque commit.
+
+**Mode actuel : Souple (non-bloquant)** ✅
+- Auto-fixe les erreurs
+- Affiche des warnings
+- **Ne bloque jamais les commits**
+
+#### Installation des hooks
+
 ```bash
+pip install pre-commit
+pre-commit install
+```
+
+#### Utilisation
+
+Les hooks s'exécutent **automatiquement** à chaque commit :
+```bash
+git add .
+git commit -m "Mon message"
+# ⚡ Lint + format automatiques
+# ✅ Commit créé même s'il y a des warnings
+```
+
+#### Changer de mode
+
+```bash
+./switch-precommit-mode.sh
+# 1 = Souple (actuel) - Ne bloque jamais
+# 2 = Strict - Bloque si erreurs
+# 3 = Minimal - Formatage seulement
+```
+
+#### Tests manuels (optionnel)
+
+```bash
+# Backend
 cd backend
 make lint      # Vérifier le code
 make format    # Formater le code
 make fix       # Corriger automatiquement
-```
 
-#### Frontend (TypeScript avec ESLint/Prettier)
-```bash
+# Frontend
 cd frontend
 make lint      # Vérifier avec ESLint
 make format    # Formater avec Prettier
 make fix       # Corriger et formater
+
+# Tous les fichiers avec pre-commit
+pre-commit run --all-files
 ```
 
-Voir [DEVELOPMENT.md](./DEVELOPMENT.md) pour plus de détails.
+Voir [PRE-COMMIT-MODES.md](./PRE-COMMIT-MODES.md) pour les détails des modes et [PRE-COMMIT.md](./PRE-COMMIT.md) pour le guide complet.

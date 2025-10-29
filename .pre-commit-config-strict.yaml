@@ -1,0 +1,48 @@
+# Pre-commit hooks configuration (MODE STRICT - BLOQUANT)
+# Pour activer: mv .pre-commit-config.yaml .pre-commit-config-soft.yaml && mv .pre-commit-config-strict.yaml .pre-commit-config.yaml
+
+repos:
+  # Backend Python - Ruff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff
+        name: ruff lint (backend)
+        files: ^backend/
+        args: [--fix, --config=backend/ruff.toml]
+      - id: ruff-format
+        name: ruff format (backend)
+        files: ^backend/
+        args: [--config=backend/ruff.toml]
+
+  # Frontend TypeScript/React - ESLint & Prettier
+  - repo: local
+    hooks:
+      - id: eslint
+        name: ESLint (frontend)
+        entry: bash -c 'cd frontend && npm run lint:fix'
+        language: system
+        files: ^frontend/src/.*\.(ts|tsx)$
+        pass_filenames: false
+
+      - id: prettier
+        name: Prettier (frontend)
+        entry: bash -c 'cd frontend && npm run format'
+        language: system
+        files: ^frontend/src/.*\.(ts|tsx|css|json)$
+        pass_filenames: false
+
+  # General hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+        exclude: ^\.vscode/
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+        args: ['--fix=lf']
