@@ -9,33 +9,34 @@ def get_portfolio_data(request):
     """
     API endpoint pour récupérer les données du portfolio
     Support multilingue via le paramètre ?lang=fr ou ?lang=en
+    Langue par défaut : anglais (en)
     """
-    lang = request.query_params.get("lang", "fr")
+    lang = request.query_params.get("lang", "en")
 
-    if lang == "en":
+    if lang == "fr":
         data = {
             "name": "Lylian Challier",
-            "title": "Curious & Passionate about Mathematics, AI, and Science.",
-            "description": "Master's student in Applied Mathematics & Artificial Intelligence at Institut de Mathématiques d'Orsay, Université Paris-Saclay. I love to explore how math can solve real-world problems.",
-            "current_work": "Currently interning at LISN/CNRS, working on symbolic regression to model turbulent convection near walls. I'm focusing on three main methods: SINDy, Gene Expression Programming (GEP), and Kolmogorov-Arnold Network (KAN).",
+            "title": "Curieux & Passionné par les Maths, l'IA et la Science.",
+            "description": "Étudiant en master à CentraleSupélec, spécialisé en mathématiques, IA, Machine Learning et Deep Learning, je suis à la recherche d'une expérience de 6 mois à partir de mars 2026. Après ce stage, il me restera une dernière année de master avant de me lancer dans une thèse CIFRE.",
+            "current_work": "Cette année, j'ai été sélectionné pour participer au programme d'innovation Digital Tech Year et j'ai reçu la bourse MathTech Gap Year (4 lauréats, FMJH). Cette expérience fait le lien entre l'innovation en matière d'IA dans le monde réel et mes objectifs de recherche dans le cadre d'une thèse CIFRE.",
             "projects": [
                 {
-                    "title": "Variational Auto-Encoders",
-                    "description": "implementation & Streamlit app",
+                    "title": "Auto-Encodeurs Variationnels",
+                    "description": "implémentation & application Streamlit",
                     "link": "https://lylianchallier-vae.streamlit.app/",
                 },
                 {
-                    "title": "Electricity demand forecasting",
-                    "description": "using Deep Learning",
+                    "title": "Prévision de la demande électrique",
+                    "description": "avec du Deep Learning",
                 },
-                {"title": "Net-Load Forecasting", "description": "in R"},
+                {"title": "Prévision de la charge nette", "description": "en R"},
                 {
-                    "title": "Movie recommendation system",
-                    "description": "using unsupervised learning",
+                    "title": "Recommandation de films",
+                    "description": "par apprentissage non supervisé",
                 },
             ],
             "contact": {
-                "email": "lylian.challier@universite-paris-saclay.fr",
+                "email": "lylian.challier@student-cs.fr",
                 "linkedin": "https://linkedin.com/in/lylian-challier",
             },
             "tools": [
@@ -105,30 +106,30 @@ def get_portfolio_data(request):
                 },
             ],
         }
-    else:  # français par défaut
+    else:  # anglais par défaut
         data = {
             "name": "Lylian Challier",
-            "title": "Curieux & Passionné par les Maths, l'IA et la Science.",
-            "description": "Étudiant en Master Mathématiques et Intelligence Artificielle à l'Institut de Mathématiques d'Orsay, Université Paris-Saclay. J'aime voir comment les mathématiques peuvent résoudre des problèmes concrets.",
-            "current_work": "Je suis actuellement en stage au LISN/CNRS pour explorer la régression symbolique afin de modéliser la convection turbulente près des parois. J'étudie trois méthodes principales : SINDy (Sparse Identification of Nonlinear Dynamics), la Gene Expression Programming (GEP), et les Kolmogorov-Arnold Networks (KANs).",
+            "title": "Curious & Passionate about Mathematics, AI, and Science.",
+            "description": "MSc student at CentraleSupélec, specialized in mathematics, AI, machine learning and deep learning, applying for a 6 month experience starting March 2026. After this internship, I will have one final year of my master's degree left before starting an industrial PhD.",
+            "current_work": "This year I was selected for the Digital Tech Year selective track, an innovation program, and awarded the MathTech Gap Year fellowship (4 laureates, FMJH). This experience bridges real-world AI innovation with my PhD-oriented research goals.",
             "projects": [
                 {
-                    "title": "Auto-Encodeurs Variationnels",
-                    "description": "implémentation & application Streamlit",
+                    "title": "Variational Auto-Encoders",
+                    "description": "implementation & Streamlit app",
                     "link": "https://lylianchallier-vae.streamlit.app/",
                 },
                 {
-                    "title": "Prévision de la demande électrique",
-                    "description": "avec du Deep Learning",
+                    "title": "Electricity demand forecasting",
+                    "description": "using Deep Learning",
                 },
-                {"title": "Prévision de la charge nette", "description": "en R"},
+                {"title": "Net-Load Forecasting", "description": "in R"},
                 {
-                    "title": "Recommandation de films",
-                    "description": "par apprentissage non supervisé",
+                    "title": "Movie recommendation system",
+                    "description": "using unsupervised learning",
                 },
             ],
             "contact": {
-                "email": "lylian.challier@universite-paris-saclay.fr",
+                "email": "lylian.challier@student-cs.fr",
                 "linkedin": "https://linkedin.com/in/lylian-challier",
             },
             "tools": [

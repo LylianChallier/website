@@ -15,7 +15,7 @@ function App() {
     null
   );
   const [loading, setLoading] = useState(true);
-  const [currentLang, setCurrentLang] = useState('fr');
+  const [currentLang, setCurrentLang] = useState('en');
 
   useEffect(() => {
     loadPortfolioData(currentLang);
