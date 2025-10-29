@@ -1,3 +1,7 @@
+import os
+
+from django.conf import settings
+from django.http import FileResponse, Http404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
@@ -202,3 +206,18 @@ def get_portfolio_data(request):
 
     serializer = PortfolioDataSerializer(data)
     return Response(serializer.data)
+
+
+def download_cv(request):
+    """
+    Vue pour télécharger le CV en PDF
+    Force le téléchargement plutôt que l'ouverture dans le navigateur
+    """
+    cv_path = os.path.join(settings.BASE_DIR, "core", "static", "core", "pdf", "CV.pdf")
+
+    if not os.path.exists(cv_path):
+        raise Http404("CV not found")
+
+    response = FileResponse(open(cv_path, "rb"), content_type="application/pdf")
+    response["Content-Disposition"] = 'attachment; filename="CV_Lylian_Challier.pdf"'
+    return response

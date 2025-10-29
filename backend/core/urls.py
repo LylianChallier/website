@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path("portfolio/", views.get_portfolio_data, name="portfolio-data"),
+    path("cv/", views.download_cv, name="download-cv"),
 ]

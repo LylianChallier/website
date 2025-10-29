@@ -16,7 +16,7 @@ const Navigation: React.FC<NavigationProps> = ({
     <nav>
       <div className="nav-left">
         <a href="/">{t('home')}</a>
-        <a href="/media/CV.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="http://localhost:8000/api/cv/" download>
           {t('cv')}
         </a>
         <a href="/projects">{t('projects')}</a>
