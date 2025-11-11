@@ -8,7 +8,7 @@ const resources = {
       cv: 'CV',
       projects: 'Projets',
       github: 'Github',
-      hello: 'Bonjour ! Bienvenu sur ma page 👋',
+      hello: 'Bonjour ! Bienvenue sur ma page 👋',
       notableProjects: '🚀 Quelques projets marquants',
       contact: '📫 Contact',
       languagesTools: '🛠️ Langages & Outils',
